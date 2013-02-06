@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  author: MyString
+  description: MyText
+  content: MyText
+  price: 9.99
+  credit: 9.99
+  pdf: 
+  photo: 
+  survey_id: 1
+
+two:
+  title: MyString
+  author: MyString
+  description: MyText
+  content: MyText
+  price: 9.99
+  credit: 9.99
+  pdf: 
+  photo: 
+  survey_id: 1

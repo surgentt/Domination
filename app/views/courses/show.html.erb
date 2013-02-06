@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @course.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @course.author %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @course.price %>
+</p>
+
+<p>
+  <b>Credit:</b>
+  <%= @course.credit %>
+</p>
+
+<p>
+  <b>Survey:</b>
+  <%= @course.survey_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course.description %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @course.content %>
+</p>
+
+<p>
+  <b>Pdf:</b>
+  <%= link_to 'PDF Version of Course Content', @course.pdf.url %><br/>
+  <b>&nbsp;Save Location</b>
+  <%= @course.pdf %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= image_tag(@course.photo.url, class: 'list_image') %></br>
+  <b>&nbsp;Save Location</b>
+  <%= @course.photo %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
