@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(:version => 20130206144642) do
     t.string   "author"
     t.text     "description"
     t.text     "content"
-    t.decimal  "price",              :precision => 8, :scale => 2
-    t.decimal  "credit",             :precision => 5, :scale => 0
+    t.decimal  "price",                 :precision => 8, :scale => 2
+    t.decimal  "credit",                :precision => 5, :scale => 0
     t.integer  "survey_id"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "pdf_file_name"
-    t.string   "pdf_content_type"
-    t.integer  "pdf_file_size"
-    t.datetime "pdf_updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
 end

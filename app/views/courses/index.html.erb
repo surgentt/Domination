@@ -1,15 +1,14 @@
 <h1>Listing courses</h1>
 
-<table>
 <% @courses.each do |course| %>
-<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-  <td>
-    <td>
-        <%= image_tag(course.photo.url, class: 'list_image') %>
-    </td>
+<table class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<tr>
+  <td rowspan="2">
+    <dt><center><%= image_tag(course.photo.url, class: 'list_image') %></center></dt>
+    <dd class="author"><%= course.author %></dd>
   </td>
 
-  <td class="list_description">
+  <td colspan="3", class="list_description">
     <dl>
         <dt><%= course.title %></dt>
         <dd><%= truncate(strip_tags(course.description),length: 200) %></dd>
@@ -18,10 +17,17 @@
 
   <td class="list_actions">
     <%= link_to("Show", {:action => 'show', :id => course.id}, :class => 'action show') %><br/> 
-    <%= link_to('Pdf', {:action => 'content', :id => course.id} ) %><br/>
+    <%= link_to 'PDF', course.document.url, target: "_blank" %><br/>
+    <%= link_to('Content', {:action => 'content', :id => course.id}) %><br/>
     <%= link_to("Edit", {:action => 'edit', :id => course.id}, :class => 'action edit') %><br/>
     <%= link_to('Destroy', {:action => 'destroy', :id => course.id}) %><br/>
   </td>
+</tr>
+
+<tr class="bottom_row">
+  <td class="price">Price: <%= number_to_currency(course.price) %></td>
+  <td class="price">Credit: <%= course.credit %></td>
+  <td><%= link_to 'Take Course', course.document.url %></td>
 </tr>
 
 <% end %>

@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Domination</title>
+  <title>Endo-Mail Continuing Education Seminars</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= image_tag("logo.jpg") %>
+    <%= @page_title || "Continuing Education" %>
 
-<%= yield %>
+  <nav id="main_nav" role="navigation">
+      <ul>
+        <li><a href="http://endomail.com/index.html">Home</a></li>
+        <li><a href="http://endomail.com/mission.html">Our Mission</a></li>
+        <li><a href="http://endomail.com/doctors.html">Our Doctors</a></li>
+        <li><a href="http://endomail.com/office.html">Our Office</a></li>
+        <li><a href="http://endomail.com/seminars.html">Our Office</a></li>
+        <li><a href="http://endomail.com/articles.html">Our Office</a></li>
+        <li><%= link_to"CE Credits", {:controller => 'store', :action => 'index' } %></a></li>
+      </ul>
+  </nav>
+  </div>
 
 </body>
+
+  <aside id="columns">
+    <h2 id="side">
+      <ul>
+        <li>Cart</li>
+        <li>Tests</li>
+        <li>Credit</li>
+      </ul>
+    </h2>
+   </aside>
+  <div  id="main">
+    <%= yield %>
+  </div>
+ 
+
+  <footer id="footer">
+    <small>Endo Mail</small>
+    <nav id="main_nav">
+      <ul>
+        <li><a href="http://endomail.com/index.html">Home</a></li>
+        <li><a href="http://endomail.com/mission.html">Our Mission</a></li>
+        <li><a href="http://endomail.com/doctors.html">Our Doctors</a></li>
+        <li><a href="http://endomail.com/office.html">Our Office</a></li>
+        <li><a href="http://endomail.com/seminars.html">Our Office</a></li>
+        <li><a href="http://endomail.com/articles.html">Our Office</a></li>
+        <li><%= link_to"CE Credits", {:action => 'index'} %></a></li>
+      </ul>
+    </nav>
+  </footer>
+
 </html>

@@ -1,4 +1,6 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
   <b>Title:</b>
@@ -12,7 +14,7 @@
 
 <p>
   <b>Price:</b>
-  <%= @course.price %>
+  <%= number_to_currency(@course.price) %>
 </p>
 
 <p>
@@ -26,20 +28,15 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @course.description %>
-</p>
-
-<p>
   <b>Content:</b>
   <%= @course.content %>
 </p>
 
 <p>
   <b>Pdf:</b>
-  <%= link_to 'PDF Version of Course Content', @course.pdf.url %><br/>
+  <%= link_to 'PDF Version of Course Content', @course.document.url %><br/>
   <b>&nbsp;Save Location</b>
-  <%= @course.pdf %>
+  <%= @course.document %>
 </p>
 
 <p>

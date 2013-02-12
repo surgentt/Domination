@@ -81,4 +81,9 @@ class CoursesController < ApplicationController
     end
   end
 
+  def content
+    @course = @course = Course.find(params[:id])
+  end
+
+
 end

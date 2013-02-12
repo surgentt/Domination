@@ -3,6 +3,14 @@ require 'test_helper'
 class CoursesControllerTest < ActionController::TestCase
   setup do
     @course = courses(:one)
+    @update = {
+      title: 'Lorem Ipsum',
+      description: 'Wibbles are fun',
+      author: 'John Doe',
+      price: 19.95,
+      credit: 2,
+      survey_id: 4,
+    }
   end
 
   test "should get index" do
@@ -18,11 +26,13 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { author: @course.author, content: @course.content, credit: @course.credit, description: @course.description, pdf: @course.pdf, photo: @course.photo, price: @course.price, survey_id: @course.survey_id, title: @course.title }
+      post :create, :course => @update
     end
 
     assert_redirected_to course_path(assigns(:course))
   end
+
+  # ...
 
   test "should show course" do
     get :show, id: @course
@@ -35,9 +45,11 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    put :update, id: @course, course: { author: @course.author, content: @course.content, credit: @course.credit, description: @course.description, pdf: @course.pdf, photo: @course.photo, price: @course.price, survey_id: @course.survey_id, title: @course.title }
+    put :update, :id => @course.to_param, :course => @update
     assert_redirected_to course_path(assigns(:course))
   end
+
+  # ...
 
   test "should destroy course" do
     assert_difference('Course.count', -1) do
@@ -46,4 +58,5 @@ class CoursesControllerTest < ActionController::TestCase
 
     assert_redirected_to courses_path
   end
+
 end
