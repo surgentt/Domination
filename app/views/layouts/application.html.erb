@@ -27,13 +27,22 @@
 </body>
 
   <aside id="columns">
-    <h2 id="side">
+    <div id="side">
       <ul>
-        <li>Cart</li>
-        <li>Tests</li>
-        <li>Credit</li>
-      </ul>
-    </h2>
+        <li>Your Cart</li>
+    </ul>
+
+<!-- START_HIGHLIGHT -->
+      <!-- START:hidden_div -->
+    <% if @cart %>
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+        <%= render @cart %>
+      <% end %>
+    <% end %>
+    <!-- END:hidden_div -->
+
+<!-- END_HIGHLIGHT -->
+    </div>
    </aside>
   <div  id="main">
     <%= yield %>
@@ -50,7 +59,7 @@
         <li><a href="http://endomail.com/office.html">Our Office</a></li>
         <li><a href="http://endomail.com/seminars.html">Our Office</a></li>
         <li><a href="http://endomail.com/articles.html">Our Office</a></li>
-        <li><%= link_to"CE Credits", {:action => 'index'} %></a></li>
+        <li><%= link_to "CE Credits", {:controller => 'store', :action => 'index'} %></a></li>
       </ul>
     </nav>
   </footer>

@@ -17,3 +17,12 @@ two:
   price: 9.99
   credit: 9.99
   survey_id: 1
+
+ruby:
+  title: Programming Ruby 1.9
+  description:
+    Ruby is the fastest growing and most exciting dynamic
+    lanugage other there. If you need to get working programs
+    delivered fast, you should add Ruby to your toolbox.
+  price: 49.50
+  credit: 2

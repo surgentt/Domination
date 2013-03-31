@@ -1,0 +1,45 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1><%= @course.title %></h1>
+
+<p>
+  <%= link_to 'PDF Version', @course.document.url, :target => "_blank" %><br/>
+</p>
+
+<table>
+
+<tr class="price">
+  <td></td>
+  <td>Price: <%= number_to_currency(@course.price, :precision => 0) %></td>
+  <td>Credit: <%= @course.credit %></td>
+  <td><a href="http://localhost:3000/surveys">TAKE TEST </a></td>
+</tr>
+
+<tr>
+  <td rowspan="2">
+    <dt><center><%= image_tag(@course.photo.url, class: 'list_image') %></center></dt>
+    <dd class="author"><%= @course.author %></dd>
+  </td>
+
+  <td colspan="3", class="list_description">
+    <dl>
+        <dd><%= sanitize(@course.content) %></dd>
+    </dl>
+  </td>
+
+</tr>
+
+<tr class="price">
+  <td>Price: <%= number_to_currency(@course.price, :precision => 0) %></td>
+  <td>Credit: <%= @course.credit %></td>
+  <td><a href="http://localhost:3000/surveys">TAKE TEST </a></td>
+</tr>
+
+</table>
+
+
+
+
+

@@ -1,0 +1,11 @@
+<!-- partial to render line_items for the cart -->
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr>
+<% end %>  	
+	<td class="quantity"><%= line_item.quantity %> &times;</td>
+  	<td><%= line_item.course.title %></td>
+    <td class="item_price"><%= number_to_currency(line_item.total_price, :precision => 0) %></td>
+    <td class="item_price"><%= line_item.total_credit %></td>
+  </tr>

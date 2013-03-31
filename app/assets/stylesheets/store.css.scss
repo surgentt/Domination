@@ -1,0 +1,68 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store {
+
+  h1 {
+  	margin: 0;
+  	padding-bottom: 0.5em;
+  	font: 150% sand-serif;
+  	color: #226;
+  	border-bottom: 3px dotted #77d;
+    width: 620px;
+  }
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px dotted #77d;
+    width: 620px;
+  }
+
+  table tr td {
+    padding: 3px;
+    vertical-align: top;
+
+  }
+
+  .list_image {
+    width:  72px;
+    height: 105px;
+    }
+
+  .author{
+      font-size: x-small;
+      margin: 0;
+      text-align: center;
+  }
+
+  .list_description {
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      font-size: 120%;
+      font-family: sans-serif;
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #227
+    }
+
+    dd {
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+      margin-left: .5em;
+    }
+  }
+
+  .price {
+      color:  #44a;
+      font-weight:  bold;
+      font-size: small;
+      text-align: center;
+  }
+
+}

@@ -1,0 +1,24 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Your Cart</h2>
+
+<table class="cart_table">
+  <tr class="header">
+  	<td></td><td></td>
+  	<th>Price</th>
+  	<th>Credit</th>
+  </tr>
+  <%= render(@cart.line_items) %>
+  <tr class="total_line">
+  	<td class="total_cell", colspan="2">Total</td>
+  	<td class="total_cell"><%= number_to_currency(@cart.total_price, :precision => 0) %></td>
+  	<td class="total_cell"><%= @cart.total_credit %></td>
+  </tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure you?'} %>
+
+&nbsp;
+<h3 class="cart_table">*You can only receive ADA credit for each course once</h3>

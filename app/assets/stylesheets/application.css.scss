@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+/* Top Banner */
+
+#banner {
+  width: 940px;
+  padding: 2px;
+  margin: 15px;
+  border-bottom: 2px solid;
+  border-color: rgb(109, 109, 109);
+  font: small-caps 35px/35px "Times New Roman", serif, bold;
+  color: rgb(0, 40, 245);
+  text-align: left;
+
+  img {
+    float: left;
+  }
+}
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#main_nav {
+	li {
+	display: inline-block;
+	margin-right: 10px;
+	border: 1px;
+  font: small;
+	}
+}
+
+/* Main Page */
+  
+  #main {
+    margin-left: 5px;
+    padding: 1em;
+    background: white;
+  }
+
+/* Side Bar */
+
+#columns {
+
+  #side {
+    margin-top: 25px;
+    padding: .5em  1em;
+    width: 280px;
+    background: rgb(95, 105, 210);
+    float: right;
+    left: 660px;
+    position: absolute;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+ 
+    #cart {
+      color:     white;
+
+      table {
+        display: inline;
+      }
+
+      .quantity{
+        width: 30px;
+      }
+
+      .header, .item_price, .total_line {
+        text-align: right;
+      }
+
+      .total_line .total_cell {
+        font-weight: bold;
+        border-top: 1px solid #595;
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        color: gold;
+        font-size: large;
+      }
+      a {
+        color: #bfb;
+        font-size: small;
+      }
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  z-index: 10;
+  width: 940px;
+  }
+
+  footer a {
+  color: #555;
+  }  
+
+  footer a:hover { 
+  }
+
+  footer small {
+    float: left;
+  }
+
+  footer ul {
+    float: right;
+    list-style: none;
+  }
+
+  footer ul li {
+    float: center;
+    margin-left: 10px;
+  }
+

@@ -1,0 +1,30 @@
+<h1>Your Continuing Education Catalog</h1>
+
+<% @courses.each do |course| %>
+<table>
+<tr>
+  <td rowspan="2", width="100px">
+    <dl>
+      <dt><center><%= image_tag(course.photo.url, class: 'list_image') %></center></dt>
+      <dd class="author"><%= course.author %></dd>
+    </dl>
+  </td>
+
+  <td colspan="4", class="list_description">
+    <dl>
+        <dt><%= course.title %></dt>
+        <dd><%= sanitize(course.description) %></dd>
+    </dl>
+  </td>
+
+</tr>
+
+<tr class="price">
+  <td>Price: <%= number_to_currency(course.price, :precision => 0) %></td>
+  <td>Credit: <%= course.credit %></td>
+  <td><%= link_to("Take Course", {:action => 'show', :id => course.id}, :class => 'action show') %></td>
+  <td><%= button_to 'Add to Cart', line_items_path(course_id: course), remote: true %></td> 
+</tr>
+
+<% end %>
+</table>

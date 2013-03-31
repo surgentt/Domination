@@ -1,7 +1,13 @@
 Domination::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get "store/index"
 
   resources :courses
+
+  match 'store' => 'store#index'
 
 
   # The priority is based upon order of creation:
